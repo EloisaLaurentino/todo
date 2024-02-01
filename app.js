@@ -11,10 +11,10 @@ app.use(express.json());
 
 //Coneção com o banco de dados MySQL
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'test'
+    host: 'todolists.mysql.database.azure.com',
+    user: 'todolist',
+    password: 'Senai@115',
+    database: 'todolists'
 })
 
 connection.connect(function (err ) {

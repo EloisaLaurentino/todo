@@ -14,7 +14,9 @@ const connection = mysql.createConnection({
     host: 'todolists.mysql.database.azure.com',
     user: 'todolist',
     password: 'Senai@115',
-    database: 'todolists'
+    database: 'todolists',
+    //port:3306, 
+    //ssl:{ca:fs.readFileSync("{ca-cert DigiCertGlobalRootCA.crt.pem}")}
 })
 
 connection.connect(function (err ) {

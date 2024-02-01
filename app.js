@@ -15,8 +15,8 @@ const connection = mysql.createConnection({
     user: 'todolist',
     password: 'Senai@115',
     database: 'todolists',
-    //port:3306, 
-    //ssl:{ca:fs.readFileSync("{ca-cert DigiCertGlobalRootCA.crt.pem}")}
+    port:3306, 
+    ssl:{ca:fs.readFileSync("DigiCertGlobalRootCA.crt.pem","base64")},
 })
 
 connection.connect(function (err ) {

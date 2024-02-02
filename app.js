@@ -24,7 +24,7 @@ function ligarBd(){
                 password: 'Senai@115',
                 database: 'todolists',
                 port:3306,
-                ssl:{ca:fs.readFileSync("DigiCertGlobalRootCA.crt.pem","base64")}
+                ssl:{ca:fs.readFileSync("DigiCertGlobalRootCA.crt.pem")}
  
             })
             resolve(200)

@@ -22,7 +22,7 @@ function ligarBd(){
                 host: 'todolists.mysql.database.azure.com',
                 user: 'todolist',
                 password: 'Senai@115',
-                database: 'todolists',
+                database: 'todolist',
                 port:3306,
                 ssl:{ca:fs.readFileSync("DigiCertGlobalRootCA.crt.pem")}
  

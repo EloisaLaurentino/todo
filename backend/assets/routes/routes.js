@@ -5,7 +5,7 @@ const controllerTask = require('../controllers/taskController')
 // Rotas de tarefas
 router
     .route("/task")
-    .get((req, res) => res.status(200).json("Olá mundo"))
+    .get((req, res) => controllerTask.task(req, res))
 router
     .route("/taskP")
     .post((req, res) => controllerTask.taskPost(req, res))

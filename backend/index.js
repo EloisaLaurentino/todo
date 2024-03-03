@@ -9,6 +9,4 @@ server.use(express.urlencoded({ extended: false }));
 server.use(express.json());
 server.use('/', routes)
 
-// server.listen(3000, ()=>{
-//     console.log('Servidor Online')
-// });
+

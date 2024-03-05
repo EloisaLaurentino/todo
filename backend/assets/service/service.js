@@ -16,6 +16,21 @@ const taskService = {
     });
   },
 
+  taskGetLista: function (idTask) {
+    return new Promise((aceito, rejeitado) => {
+      db.query(
+        `call retornarTarefas('${idTask}')`,
+        (error, result) => {
+          if (error) {
+            rejeitado(error);
+            return;
+          }
+          aceito(result);
+        }
+      );
+    });
+  },
+
   taskPut: function (idTarefa, nomeTarefa, descricao, tipo) {
     return new Promise((aceito, rejeitado) => {
       db.query(
@@ -69,6 +84,7 @@ const taskService = {
       );
     });
   },
+
   task: function (id) {
     return new Promise((aceito, rejeitado) => {
       db.query(`SELECT * FROM TAREFAS`, (erro, results) => {
@@ -80,6 +96,7 @@ const taskService = {
       });
     });
   },
+
   taskId: function (id) {
     return new Promise((aceito, rejeitado) => {
       db.query(
@@ -94,6 +111,7 @@ const taskService = {
       );
     });
   },
+
   listPost: function (nomeList) {
     console.log(nomeList);
     return new Promise((aceito, rejeitado) => {
@@ -109,6 +127,7 @@ const taskService = {
       );
     });
   },
+
   listDelete: function (idList) {
     return new Promise((aceito, rejeitado) => {
       db.query(`CALL excluirLista(${idList})`, (error, result) => {

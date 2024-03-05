@@ -29,6 +29,21 @@ const controllerTask = {
     }
   },
 
+  taskGetLista: async function (req, res) {
+    const idTask = req.params.id;
+
+    if (idTask) {
+      const result = await service.taskGetLista(idTask);
+      if (result) {
+        res.status(200).json(result);
+      } else if (result == []) {
+        res.status(404).json("Tarefa não encontrado");
+      }
+    } else {
+      res.json("Sem dados");
+    }
+  },
+
   taskPost: async function (req, res) {
     const tipo = req.body.tipo;
     const nomeTask = req.body.nomeTask;
@@ -68,7 +83,7 @@ const controllerTask = {
 
     if (idTask) {
       const result = await service.taskPutSF(idTask);
-      res.status(200).json("Deletado com sucesso");
+      res.status(200).json("Status atualizado: feito");
     } else {
       res.json("Sem parametro");
     }
@@ -79,7 +94,7 @@ const controllerTask = {
 
     if (idTask) {
       const result = await service.taskPutSN(idTask);
-      res.status(200).json("Deletado com sucesso");
+      res.status(200).json("Status atualizado: naofeito");
     } else {
       res.json("Sem parametro");
     }

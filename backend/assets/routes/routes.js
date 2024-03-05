@@ -24,6 +24,9 @@ router
 router
     .route("/naofeito/:id")
     .put((req, res) => controllerTask.taskPutSN(req, res));
+router
+    .route("/taskLista/:id")
+    .get((req, res) => controllerTask.taskGetLista(req, res));
 
 
 // rotas de lista

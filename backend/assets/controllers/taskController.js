@@ -83,7 +83,7 @@ const controllerTask = {
 
     if (idTask) {
       const result = await service.taskPutSF(idTask);
-      res.status(200).json("Status atualizado: feito");
+      res.status(200).json("Status atualizado: Feito");
     } else {
       res.json("Sem parametro");
     }
@@ -94,7 +94,7 @@ const controllerTask = {
 
     if (idTask) {
       const result = await service.taskPutSN(idTask);
-      res.status(200).json("Status atualizado: naofeito");
+      res.status(200).json("Status atualizado: Não feito");
     } else {
       res.json("Sem parametro");
     }
